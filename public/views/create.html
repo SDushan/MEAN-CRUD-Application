@@ -1,0 +1,59 @@
+<hr>
+    <form class="form-horizontal" name="foodForm" ng-submit="saveData(food)" novalidate="">
+        <div class="form-group">
+            <label class="col-md-2">
+                Name
+            </label>
+            <div class="col-md-10">
+                <input class="form-control" name="name" ng-model="food.name" ng-required="true" type="text"/>
+                <p class="text-danger" ng-show="foodForm.name.$error.required && (foodForm.$submitted || foodForm.name.$dirty)">
+                    Please Enter Name
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">
+                Description
+            </label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="description" ng-model="food.description" ng-required="true">
+                </textarea>
+                <p class="text-danger" ng-show="foodForm.description.$error.required && (foodForm.$submitted || foodForm.description.$dirty)">
+                    Please Enter Description
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">
+                Category
+            </label>
+            <div class="col-md-10">
+                <input class="form-control" name="category" ng-model="food.category" ng-required="true" type="text"/>
+                <p class="text-danger" ng-show="foodForm.category.$error.required && (foodForm.$submitted || foodForm.category.$dirty)">
+                    Please Enter Category
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">
+                Price
+            </label>
+            <div class="col-md-10">
+                <input class="form-control" name="price" ng-model="food.price" ng-required="true" type="text"/>
+                <p class="text-danger" ng-show="foodForm.price.$error.required && (foodForm.$submitted || foodForm.price.$dirty)">
+                    Please Enter Price
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btn btn-primary" type="submit" value="Save"/>
+                <input class="btn btn-primary" type="reset" value="Cancel"/>
+            </div>
+        </div>
+    </form>
+</hr>

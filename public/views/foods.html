@@ -1,0 +1,48 @@
+<h2>
+    Foods Items
+</h2>
+<div class="jumbotron text-left" ng-init="getAll()">
+    <table class="table" ng-if="foods.length>0">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        <tr ng-repeat="food in foods | pagination : (currentPage-1) * pageSize | limitTo : pageSize">
+            <td>
+                {{food.name}}
+            </td>
+            <th>
+                {{food.description}}
+            </th>
+            <td>
+                {{food.category}}
+            </td>
+            <td>
+                {{food.price}}
+            </td>
+            <td>
+                <a href="#" ng-click="deleteFood(food._id)">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    </table>
+    <div ng-if="foods.length==0">
+        No record found !!
+    </div>
+</div>
+
+<ul uib-pagination total-items="foods.length" items-per-page="pageSize" ng-model="currentPage" ></ul>
